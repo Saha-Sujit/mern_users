@@ -78,7 +78,7 @@ const Login = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:9002/login", user).then((res) => {
+    axios.post("https://mern-users.vercel.app/login", user).then((res) => {
       alert(res.data.message);
       localStorage.setItem("user", res.data.user._id);
       window.location = "/";

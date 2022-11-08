@@ -85,7 +85,7 @@ const Register = () => {
     e.preventDefault();
     const { firstname, lastname, email, password } = user;
     if (firstname && lastname && email && password) {
-      axios.post("http://localhost:9002/register", user).then((res) => {
+      axios.post("https://mern-users.vercel.app/register", user).then((res) => {
         alert(res.data.message);
         window.location = "/signin";
       });
