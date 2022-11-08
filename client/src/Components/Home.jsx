@@ -166,7 +166,7 @@ const Home = () => {
     city: "",
   });
   useEffect(() => {
-    const baseUrl = `http://localhost:9002/allusers?page=${page}&search=${search}&sort=${sort}&limit=${limit}`;
+    const baseUrl = `https://mern-users.vercel.app/allusers?page=${page}&search=${search}&sort=${sort}&limit=${limit}`;
     axios.get(baseUrl).then((response) => {
       setFetchData(response.data.allusers);
       setTotal(response.data.total);
