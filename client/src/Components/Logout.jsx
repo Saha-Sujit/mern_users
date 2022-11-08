@@ -19,7 +19,7 @@ const Button = styled.button`
 const Logout = () => {
   const handleClick = () => {
     localStorage.removeItem("user");
-    window.location.reload();
+    window.location = "/";
   };
 
   return (
