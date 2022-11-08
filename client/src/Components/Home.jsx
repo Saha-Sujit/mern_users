@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Logout from "./Logout";
 import styled from "styled-components";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Container = styled.div`
   padding: 50px;
@@ -229,6 +230,7 @@ const Home = () => {
               <SetLimits value="50">50</SetLimits>
             </LIMIT>
           </LimitContainer>
+          <Link to="/localdata">Saved Users</Link>
         </TopContainer>
         <Table>
           <TR>
