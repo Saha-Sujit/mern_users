@@ -3,6 +3,7 @@ import cors from "cors";
 import mongoose from "mongoose";
 import bcrypt from "bcryptjs";
 import dotenv from "dotenv/config";
+import path from "path";
 
 const app = express();
 app.use(express.json());
@@ -41,6 +42,11 @@ const allUserSchema = new mongoose.Schema({
 
 //all users model
 const AllUser = new mongoose.model("AllUser", allUserSchema);
+
+app.get("/", (req, res) => {
+  app.use(express.static(path.resolve(__dirname, "client", "build")));
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
+});
 
 app.use("/allusers", (req, res) => {
   AllUser.find(async (err, alluser) => {
